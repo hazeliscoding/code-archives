@@ -1,7 +1,12 @@
+import { UserButton } from '@clerk/nextjs';
 import React from 'react';
 
 const MyNotes = () => {
-  return <div>MyNotes</div>;
+  return (
+    <div>
+      <UserButton />
+    </div>
+  );
 };
 
 export default MyNotes;
