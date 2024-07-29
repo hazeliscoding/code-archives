@@ -53,6 +53,8 @@ export async function POST(req: Request) {
 
   const eventType = evt.type;
 
+  console.log('Event type:', eventType);
+
   if (eventType === 'user.created') {
     const { id, email_addresses } = evt.data;
     const userInfo: IUser = {
@@ -62,6 +64,8 @@ export async function POST(req: Request) {
 
     await connect();
     await createNewUser(userInfo);
+
+    console.log('User created:', userInfo);
   }
 
   return new Response('', { status: 200 });
